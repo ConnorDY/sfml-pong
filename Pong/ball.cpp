@@ -48,9 +48,24 @@ void Ball::draw(sf::RenderWindow &window)
 	window.draw(rect);
 }
 
-void Ball::update(sf::Time deltaTime)
+void Ball::update(sf::Time deltaTime, Paddle* paddles[])
 {
 	// Update position
 	x += (float)((double)dx * deltaTime.asMilliseconds());
 	y += (float)((double)dy * deltaTime.asMilliseconds());
+
+	// Check Collision
+	sf::FloatRect rect(x - (BALL_WIDTH / 2), y - (BALL_HEIGHT / 2), BALL_WIDTH, BALL_HEIGHT);
+
+	for (int i = 0; i < 2; i++)
+	{
+		sf::FloatRect paddle(paddles[i]->getX() - (PADDLE_WIDTH / 2), paddles[i]->getY() - (PADDLE_HEIGHT / 2), PADDLE_WIDTH, PADDLE_HEIGHT);
+
+		if (rect.intersects(paddle))
+		{
+			// TODO: make actual physics
+			dx *= -1;
+			dy *= -1;
+		}
+	}
 }

@@ -15,9 +15,13 @@ class Paddle
 		Paddle(float xx, float yy);
 		~Paddle();
 
+		// Accessors
+		float getX() const;
+		float getY() const;
+
 		// Mutators
 		void setDir(int d);
-		void setY(int yy);
+		void setY(float yy);
 
 		// Actions
 		void draw(sf::RenderWindow &window);

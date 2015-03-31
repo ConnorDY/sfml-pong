@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "globals.h"
+#include "paddle.h"
 
 class Ball
 {
@@ -22,7 +23,7 @@ class Ball
 
 		// Actions
 		void draw(sf::RenderWindow &window);
-		void update(sf::Time deltaTime);
+		void update(sf::Time deltaTime, Paddle* paddles[]);
 };
 
 #endif

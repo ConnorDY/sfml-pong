@@ -21,13 +21,26 @@ Paddle::~Paddle()
 }
 
 
+/* Accessors */
+float Paddle::getX() const
+{
+	return x;
+}
+
+float Paddle::getY() const
+{
+	return y;
+}
+
+
+
 /* Mutators */
 void Paddle::setDir(int d)
 {
 	dir = d;
 }
 
-void Paddle::setY(int yy)
+void Paddle::setY(float yy)
 {
 	y = yy;
 }

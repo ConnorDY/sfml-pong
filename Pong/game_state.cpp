@@ -13,7 +13,7 @@ Game_State::Game_State(StateManager &sM)
 
 	// Create ball
 	ball = new Ball(ROOM_WIDTH / 2, ROOM_HEIGHT / 2);
-	//ball->setVelocity(sf::Vector2f(.1, .1));
+	ball->setVelocity(sf::Vector2f(.1, .1));
 }
 
 Game_State::~Game_State()
@@ -91,5 +91,6 @@ void Game_State::update(sf::RenderWindow &window, InputHandler &inputHandler)
 	paddleR->update(deltaTime);
 
 	// Update ball
-	ball->update(deltaTime);
+	Paddle* paddles[] = {paddleL, paddleR};
+	ball->update(deltaTime, paddles);
 }
