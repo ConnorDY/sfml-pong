@@ -1,22 +1,25 @@
 #include <SFML/Graphics.hpp>
 
+#include "state_manager.h"
+
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Pong");
+	// Create State Manager
+	StateManager stateManager;
 
+	// Create Window
+	sf::RenderWindow window(sf::VideoMode(400, 400), "Pong", sf::Style::Close | sf::Style::Titlebar);
+	window.setVerticalSyncEnabled(true);
+
+	// Game Loop
 	while (window.isOpen())
 	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
+		// Update State
+		stateManager.update(window);
 
+		// Draw the State
 		window.clear();
-
-
-
+		stateManager.draw(window);
 		window.display();
 	}
 
