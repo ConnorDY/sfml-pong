@@ -76,12 +76,15 @@
     <ClCompile Include="game_state.cpp" />
     <ClCompile Include="input_handler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="paddle.cpp" />
     <ClCompile Include="state.cpp" />
     <ClCompile Include="state_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_state.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="input_handler.h" />
+    <ClInclude Include="paddle.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="state_manager.h" />
   </ItemGroup>

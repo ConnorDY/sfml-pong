@@ -3,14 +3,18 @@
 Game_State::Game_State(StateManager &sM)
 	: State(sM)
 {
-	// Load Font
+	// Load font
 	if (!fnt.loadFromFile("res/Tewi-normal-11.bdf")) std::cout << "Failed to load menu font!" << std::endl;
 	const_cast<sf::Texture&>(fnt.getTexture(11)).setSmooth(false);
+
+	// Create paddles
+	paddleL = new Paddle(16, ROOM_HEIGHT / 2);
+	paddleR = new Paddle(ROOM_WIDTH - 16, ROOM_HEIGHT / 2);
 }
 
 Game_State::~Game_State()
 {
-
+	
 }
 
 
@@ -35,6 +39,10 @@ void Game_State::draw(sf::RenderWindow &window)
 
 	// Draw text
 	window.draw(text);
+
+	// Draw paddles
+	paddleL->draw(window);
+	paddleR->draw(window);
 }
 
 void Game_State::update(sf::RenderWindow &window, InputHandler &inputHandler)
@@ -75,4 +83,8 @@ void Game_State::update(sf::RenderWindow &window, InputHandler &inputHandler)
 			
 		}
 	}
+
+	// Update paddles
+	paddleL->update();
+	paddleR->update();
 }

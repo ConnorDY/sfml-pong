@@ -7,34 +7,34 @@
 
 class InputHandler
 {
-public:
-	enum Input
-	{
-		Left, Right, Up, Down,
-		Action, Start, Exit
-	};
+	public:
+		enum Input
+		{
+			Left, Right, Up, Down,
+			Action, Start, Exit
+		};
 
-	InputHandler();
+		InputHandler();
 
-	// Actions
-	bool checkInput(Input i, sf::Event e);
-	bool checkInput(Input i);
-private:
-	enum InputType
-	{
-		Key,
-		MouseInput,
-		JoystickInput
-	};
-	struct InputKeys
-	{
-		InputType inputType;
-		sf::Event::EventType eventType;
-		sf::Keyboard::Key keyCode;
-		sf::Mouse::Button mouseButton;
-	};
+		// Actions
+		bool checkInput(Input i, sf::Event e);
+		bool checkInput(Input i);
+	private:
+		enum InputType
+		{
+			Key,
+			MouseInput,
+			JoystickInput
+		};
+		struct InputKeys
+		{
+			InputType inputType;
+			sf::Event::EventType eventType;
+			sf::Keyboard::Key keyCode;
+			sf::Mouse::Button mouseButton;
+		};
 
-	InputKeys *Inputs[8];
+		InputKeys *Inputs[8];
 };
 
 #endif

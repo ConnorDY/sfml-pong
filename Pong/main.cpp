@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 
+#include "globals.h"
 #include "state_manager.h"
 
 int main()
@@ -8,7 +9,7 @@ int main()
 	StateManager stateManager;
 
 	// Create Window
-	sf::RenderWindow window(sf::VideoMode(400, 400), "Pong", sf::Style::Close | sf::Style::Titlebar);
+	sf::RenderWindow window(sf::VideoMode(ROOM_WIDTH, ROOM_HEIGHT), "Pong", sf::Style::Close | sf::Style::Titlebar);
 	window.setVerticalSyncEnabled(true);
 
 	// Game Loop
