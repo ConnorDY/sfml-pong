@@ -18,10 +18,13 @@ class Ball
 		~Ball();
 
 		// Accesors
+		float getX() const;
 		float getY() const;
 
 		// Mutators
 		void setVelocity(sf::Vector2f vel);
+		void setX(float xx);
+		void setY(float yy);
 
 		// Actions
 		void draw(sf::RenderWindow &window);

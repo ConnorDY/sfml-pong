@@ -24,6 +24,11 @@ Ball::~Ball()
 
 
 /* Accessors */
+float Ball::getX() const
+{
+	return x;
+}
+
 float Ball::getY() const
 {
 	return y;
@@ -35,6 +40,16 @@ void Ball::setVelocity(sf::Vector2f vel)
 {
 	dx = vel.x;
 	dy = vel.y;
+}
+
+void Ball::setX(float xx)
+{
+	x = xx;
+}
+
+void Ball::setY(float yy)
+{
+	y = yy;
 }
 
 

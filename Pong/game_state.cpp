@@ -93,4 +93,16 @@ void Game_State::update(sf::RenderWindow &window, InputHandler &inputHandler)
 	// Update ball
 	Paddle* paddles[] = {paddleL, paddleR};
 	ball->update(deltaTime, paddles);
+
+	// Check if ball has left the screen
+	if (ball->getX() < -BALL_WIDTH / 2 || ball->getY() > ROOM_WIDTH + (BALL_WIDTH / 2))
+	{
+		ball->setX(ROOM_WIDTH / 2);
+		ball->setY(ROOM_HEIGHT / 2);
+		ball->setVelocity(sf::Vector2f(.2f, .2f));
+
+		paddleL->setY(ROOM_HEIGHT / 2);
+		paddleR->setY(ROOM_HEIGHT / 2);
+		paddleL->setDir(0);
+	}
 }
