@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+# Directories
+Debug/
+Release/
+Pong/Debug/
+Pong/Release/
