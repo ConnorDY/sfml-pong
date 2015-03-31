@@ -13,7 +13,7 @@ Game_State::Game_State(StateManager &sM)
 
 	// Create ball
 	ball = new Ball(ROOM_WIDTH / 2, ROOM_HEIGHT / 2);
-	ball->setVelocity(sf::Vector2f(.1, .1));
+	ball->setVelocity(sf::Vector2f(.2f, .2f));
 }
 
 Game_State::~Game_State()
