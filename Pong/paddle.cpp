@@ -62,4 +62,5 @@ void Paddle::update(sf::Time deltaTime)
 	y += (float)((double)dir * (double)PADDLE_SPEED * deltaTime.asMilliseconds());
 
 	if (y + (PADDLE_HEIGHT / 2) > ROOM_HEIGHT) y = ROOM_HEIGHT - (PADDLE_HEIGHT / 2);
+	else if (y < PADDLE_HEIGHT / 2) y = PADDLE_HEIGHT / 2;
 }

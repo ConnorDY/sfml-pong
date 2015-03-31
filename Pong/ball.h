@@ -2,6 +2,8 @@
 #define BALL_H
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include <math.h>
 
 #include "globals.h"
 #include "paddle.h"

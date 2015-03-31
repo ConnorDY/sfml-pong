@@ -12,5 +12,8 @@
 
 #define BALL_WIDTH 8
 #define BALL_HEIGHT 8
+#define BALL_SPEED .2
+
+#define MAX_ANGLE 1.30899694
 
 #endif

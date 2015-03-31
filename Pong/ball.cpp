@@ -63,9 +63,15 @@ void Ball::update(sf::Time deltaTime, Paddle* paddles[])
 
 		if (rect.intersects(paddle))
 		{
-			// TODO: make actual physics
-			dx *= -1;
-			dy *= -1;
+			float angle = (paddles[i]->getY() - y) / (PADDLE_HEIGHT / 2) * MAX_ANGLE;
+
+			int dir = 1;
+			if (dx < 0) dir = -1;
+
+			dx = -dir * cos(angle) * BALL_SPEED;
+			dy = -dir * -sin(angle) * BALL_SPEED;
+
+			std::cout << angle << std::endl;
 		}
 	}
 }
