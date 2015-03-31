@@ -10,13 +10,18 @@ class Paddle
 	private:
 		sf::RectangleShape rect;
 		float x, y;
+		int dir;
 	public:
 		Paddle(float xx, float yy);
 		~Paddle();
 
+		// Mutators
+		void setDir(int d);
+		void setY(int yy);
+
 		// Actions
-		virtual void draw(sf::RenderWindow &window);
-		virtual void update();
+		void draw(sf::RenderWindow &window);
+		void update(sf::Time deltaTime);
 };
 
 #endif

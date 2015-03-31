@@ -6,11 +6,13 @@
 #include "globals.h"
 #include "state.h"
 #include "paddle.h"
+#include "ball.h"
 
 class Game_State : public State
 {
 	private:
 		Paddle *paddleL, *paddleR;
+		Ball *ball;
 		sf::Font fnt;
 	public:
 		Game_State(StateManager &sM);

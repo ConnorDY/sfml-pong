@@ -2,7 +2,8 @@
 
 Paddle::Paddle(float xx, float yy)
 {
-	// Position
+	// Direction and Position
+	dir = 0;
 	x = xx;
 	y = yy;
 
@@ -19,6 +20,20 @@ Paddle::~Paddle()
 
 }
 
+
+/* Mutators */
+void Paddle::setDir(int d)
+{
+	dir = d;
+}
+
+void Paddle::setY(int yy)
+{
+	y = yy;
+}
+
+
+/* Actions */
 void Paddle::draw(sf::RenderWindow &window)
 {
 	// Set position
@@ -28,7 +43,10 @@ void Paddle::draw(sf::RenderWindow &window)
 	window.draw(rect);
 }
 
-void Paddle::update()
+void Paddle::update(sf::Time deltaTime)
 {
+	// Update position
+	y += (float)((double)dir * (double)PADDLE_SPEED * deltaTime.asMilliseconds());
 
+	if (y + (PADDLE_HEIGHT / 2) > ROOM_HEIGHT) y = ROOM_HEIGHT - (PADDLE_HEIGHT / 2);
 }

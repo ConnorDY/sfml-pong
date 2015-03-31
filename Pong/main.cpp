@@ -10,7 +10,7 @@ int main()
 
 	// Create Window
 	sf::RenderWindow window(sf::VideoMode(ROOM_WIDTH, ROOM_HEIGHT), "Pong", sf::Style::Close | sf::Style::Titlebar);
-	window.setVerticalSyncEnabled(true);
+	window.setVerticalSyncEnabled(VSYNC_ON);
 
 	// Game Loop
 	while (window.isOpen())
