@@ -74,7 +74,7 @@ void Ball::update(sf::Time deltaTime, Paddle* paddles[])
 
 	for (int i = 0; i < 2; i++)
 	{
-		sf::FloatRect paddle(paddles[i]->getX() - (PADDLE_WIDTH / 2), paddles[i]->getY() - (PADDLE_HEIGHT / 2), PADDLE_WIDTH, PADDLE_HEIGHT);
+		sf::FloatRect paddle(paddles[i]->getX() + pow(-1, i + 2) * ((PADDLE_WIDTH / 2) - 1) - (i == 1), paddles[i]->getY() - (PADDLE_HEIGHT / 2), 1, PADDLE_HEIGHT);
 
 		if (rect.intersects(paddle))
 		{
@@ -92,6 +92,9 @@ void Ball::update(sf::Time deltaTime, Paddle* paddles[])
 
 				std::cout << angle << std::endl;
 			}
+
+			if (i == 0) x = paddles[0]->getX() + (PADDLE_WIDTH / 2) + (BALL_WIDTH / 2);
+			else x = paddles[1]->getX() - (PADDLE_WIDTH / 2) - (BALL_WIDTH / 2);
 		}
 	}
 

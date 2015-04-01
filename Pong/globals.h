@@ -8,7 +8,9 @@
 
 #define PADDLE_WIDTH 8
 #define PADDLE_HEIGHT 64
-#define PADDLE_SPEED .4
+#define PADDLE_SPEED .42
+
+#define BOT_SPEED .225
 
 #define BALL_WIDTH 8
 #define BALL_HEIGHT 8

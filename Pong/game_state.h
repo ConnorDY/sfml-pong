@@ -14,6 +14,7 @@ class Game_State : public State
 		Paddle *paddleL, *paddleR;
 		Ball *ball;
 		sf::Font fnt;
+		unsigned int lscore, rscore;
 	public:
 		Game_State(StateManager &sM);
 		virtual ~Game_State();
